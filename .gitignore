@@ -1,0 +1,33 @@
+# Android/Gradle
+.gradle/
+/build/
+**/build/
+/local.properties
+/.idea/
+*.iml
+*.hprof
+
+# Keystore
+*.jks
+*.keystore
+
+# Generated files
+app/google-services.json
+app/src/debug/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IntelliJ
+out/
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+
+# Ignore API key files
+secrets.properties
+.env

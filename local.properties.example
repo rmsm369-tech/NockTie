@@ -1,0 +1,10 @@
+# Local development secrets - copy to local.properties (DO NOT COMMIT)
+# Fill the values below with your keys/urls. Keep secrets out of source control.
+
+GEMINI_API_KEY=
+MISTRAL_API_KEY=
+OPENROUTER_API_KEY=
+GROQ_API_KEY=
+SARVAM_API_KEY=
+WORKER_URL=https://talk2you.rmsm369.workers.dev/
+WORKER_URL=https://hoxipai.rmsm369.workers.dev/
