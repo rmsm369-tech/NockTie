@@ -78,4 +78,4 @@ This project is public domain / MIT-style. Adjust the license file as needed.
 
 ---
 
-If you want, I can also add a short `version.json` example to the hosted site or implement the `FileProvider` sharing flow inside the app.
+
