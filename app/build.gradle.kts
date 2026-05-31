@@ -39,15 +39,24 @@ android {
     val workerUrlPrimary = localProps.getProperty("WORKER_URL_PRIMARY") ?: project.findProperty("WORKER_URL_PRIMARY")?.toString() ?: localProps.getProperty("WORKER_URL") ?: project.findProperty("WORKER_URL")?.toString() ?: ""
     val workerUrlSecondary = localProps.getProperty("WORKER_URL_SECONDARY") ?: project.findProperty("WORKER_URL_SECONDARY")?.toString() ?: ""
 
+    // Paste the signingConfigs block right here:
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file("nocktie-release.jks")
+            storePassword = localProps.getProperty("RELEASE_STORE_PASSWORD") ?: ""
+            keyAlias = "nocktie-key"
+            keyPassword = localProps.getProperty("RELEASE_KEY_PASSWORD") ?: ""
+        }
+    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            
+            // ADD THIS LINE so it actually uses the keystore you just linked:
+            signingConfig = signingConfigs.getByName("release") 
+            
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            buildConfigField("String", "WORKER_URL", "\"$workerUrl\"")
-            buildConfigField("String", "WORKER_URL_PRIMARY", "\"$workerUrlPrimary\"")
-            buildConfigField("String", "WORKER_URL_SECONDARY", "\"$workerUrlSecondary\"")
-        }
-        getByName("debug") {
             buildConfigField("String", "WORKER_URL", "\"$workerUrl\"")
             buildConfigField("String", "WORKER_URL_PRIMARY", "\"$workerUrlPrimary\"")
             buildConfigField("String", "WORKER_URL_SECONDARY", "\"$workerUrlSecondary\"")
