@@ -304,7 +304,7 @@ fun ProfileScreen(onSignOut: () -> Unit, darkMode: Boolean, onToggleDark: (Boole
                 val shareIntent = Intent(Intent.ACTION_SEND).apply {
                     type = "text/plain"
                     putExtra(Intent.EXTRA_SUBJECT, "Try Nocktie")
-                    putExtra(Intent.EXTRA_TEXT, "Try Nocktie: https://rmsm369-tech.github.io/hoxip.ai/index.html")
+                    putExtra(Intent.EXTRA_TEXT, "Try Nocktie: https://github.com/rmsm369-tech/NockTie")
                 }
                 context.startActivity(Intent.createChooser(shareIntent, "Share App"))
             } catch (_: Exception) {}
