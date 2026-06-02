@@ -51,6 +51,11 @@ Implement the update-check in HomeScreen (a small fetch + compare against BuildC
 Two approaches:
  * Share a hosted APK link (recommended): upload app-debug.apk to GitHub/GitHub Pages or another host and share the direct download URL.
  * Share the actual APK file from the device: implement FileProvider in AndroidManifest.xml, add res/xml/file_paths.xml, and use FileProvider.getUriForFile(...) from Profile.
+
+[![Play on Itch.io](https://img.shields.io/badge/Play%20on-Itch.io-fa5c5c?style=for-the-badge&logo=itchdotio&logoColor=white)](https://nyxtesla.itch.io/nocktie)
+
+* A privacy-focused Android utility application combining a local notes engine, secure communication layouts, and a custom 2D canvas arcade suite.
+
 ## Notes & Troubleshooting
  * Google Sign-In will not work inside Android WebView due to secure-browser policies. The app opens the Hoxip web app in the external browser to avoid this restriction.
  * If you see runtime crashes after edits, capture adb logcat output and open crash.log for diagnosis.
@@ -67,3 +72,5 @@ This project is public domain / MIT-style. Adjust the license file as needed.
  * **Edge Routing Performance:** Replaced redundant cryptographic token operations in the backend worker with an in-memory global token caching mechanism, dropping routing latency to milliseconds.
  * **Quota Indicators:** Added visible usage tracking boxes (📱 [Quota Remaining: X messages]) directly inside egress chat blocks.
  * **Autonomous Pipeline Guardrails:** Deployed strict timeout controls on open interaction semantic data components (Wikipedia, ArXiv, Open-Meteo) to protect worker runtime cycles.
+
+   
